@@ -1,7 +1,28 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
+    "mysql2": "^2.3.3",
     "sequelize": "^6.25.5"
-  }
+  },
+  "name": "project-2-the-cinemaphiles",
+  "description": "This is the project 2 for the UCF FSF Bootcamp",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sangki810/Project-2-The-Cinemaphiles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sangki810/Project-2-The-Cinemaphiles/issues"
+  },
+  "homepage": "https://github.com/sangki810/Project-2-The-Cinemaphiles#readme"
 }
