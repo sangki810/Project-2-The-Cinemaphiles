@@ -13,13 +13,17 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    rating: {
+    content: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      like: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
       },
   },
   {
@@ -27,7 +31,7 @@ Review.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "category",
+    modelName: "review",
   }
 );
 
