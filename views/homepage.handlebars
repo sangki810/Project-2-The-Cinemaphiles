@@ -1,4 +1,4 @@
-<div>
+{{!-- <div>
   <div>
 {{!-- movie img --}}
   </div>
@@ -20,6 +20,23 @@
   </div>
 {{!-- movie title --}}
   <h2></h2>
-</div>
+</div> --}}
+
+{{!-- hero --}}
+<section class="hero is-large is-info">
+  <div class="hero-body">
+    <p class="title">
+      Large hero
+    </p>
+  </div>
+</section>
+
+{{#each movies as |movie|}}
+<p>{{id}}</p>
+<p>{{original_title}}</p>
+<p>{{overview}}</p>
+{{/each}}
+
 
 <script src="/js/home.js"></script>
+
