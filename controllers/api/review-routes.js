@@ -14,11 +14,11 @@ router.post('/', async (req, res) => {
 // DELETE a review
 router.delete('/:id', async (req, res) => {
   try {
-    const reviewData = await Trip.destroy({
+    const reviewData = await Review.destroy({
       where: { id: req.params.id }
     });
     if (!reviewData) {
-      res.status(404).json({ message: 'No trip with this id!' });
+      res.status(404).json({ message: 'No reviews with this id!' });
       return;
     }
     res.status(200).json(reviewData);
