@@ -2,25 +2,25 @@ const router = require('express').Router();
 const { User, Movie } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-    res.send("<h1>Cinemafiles Route!</h1>");
-});
+// router.get('/', (req, res) => {
+//     res.send("./views");
+// });
 
 router.get('/', async (req, res) => {
   try {
-    const movieData = await Movie.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name']
-        },
-      ]
-    });
+    // const movieData = await Movie.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name']
+    //     },
+    //   ]
+    // });
 
-    const movies = movieData.map((post) => post.get({ plain: true }));
+    // const movies = movieData.map((post) => post.get({ plain: true }));
     
     res.render('homepage', {
-      movies,
+    //   movies,
       logged_in: req.session.logged_in
     });
   } catch (err) {
