@@ -72,7 +72,21 @@ opacity: 0.5;
  
 
 
-{{!-- data rendered to route
+search-results
+{{#if movieSearchResults.length}} 
+<h3>search results</h3>
+{{#each movieSearchResults as |movie|}}
+<p>{{id}}</p>
+<p>{{original_title}}</p>
+<p>{{overview}}</p>
+<img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+{{/each}}
+{{/if}}
+
+
+{{-- data rendered to route
+
+
 {{#each movies as |movie|}}
 <p>{{id}}</p>
 <p>{{original_title}}</p>

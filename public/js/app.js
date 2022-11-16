@@ -6,6 +6,7 @@ var submitMovieSearch = function () {
   var movieSearch = searchInput.value.trim();
   console.log(movieSearch);
   // axios get pass in params
-
+  window.location.href = `?search=${movieSearch}`
+  // window.location.reload(true)
 };
 searchButton.addEventListener("click", submitMovieSearch);

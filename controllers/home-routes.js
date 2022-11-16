@@ -8,16 +8,30 @@ const axios = require("axios");
 // });
 
 router.get("/", async (req, res) => {
+  console.log(req.query.search);
   try {
-    const results = await axios
-      .get("https://api.themoviedb.org/3/movie/popular", {
+    const results = await axios.get(
+      "https://api.themoviedb.org/3/movie/popular",
+      {
         params: {
           api_key: "b8ee7a106909a7a297e5b0ca3b261018",
           language: "en-US",
         },
-      })
-      
-        console.log(results.data.results);
+      }
+    );
+    let searchResults = [];
+    if (req.query.search) {
+      searchResults = await axios.get("https://api.themoviedb.org/3/search/movie", {
+        params: {
+          query: req.query.search,
+          api_key: "b8ee7a106909a7a297e5b0ca3b261018",
+          language: "en-US",
+        },
+      });
+      searchResults = searchResults.data.results
+    }
+
+    // console.log(results.data.results);
 
     // const movieData = await Movie.findAll({
     //   include: [
@@ -31,7 +45,8 @@ router.get("/", async (req, res) => {
     // const movies = movieData.map((post) => post.get({ plain: true }));
 
     res.render("homepage", {
-        movies: results.data.results,
+      movies: results.data.results,
+      movieSearchResults: searchResults,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
