@@ -2,13 +2,16 @@
   <div class="hero-body is-flex">
     <div class="container">
       <div class="columns is-centered box">
-        <div class="column">
+        <div class="column is-one-third">
           <h2>{{original_title}}</h2>
           <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
         </div>
-        <div class="column">
-          <h2>Review by {{user.name}}</h2>
-          <p>{{review.content}}</p>
+        <div class="column is-two-thirds">
+          <h2>Review</h2>
+          <form>
+            <input class="input" type="text" placeholder="Add a review">
+            <button class="button">Submit</button>
+          </form>
           <div class="star-rating">
             <button class="star">&#9734</button>
             <button class="star">&#9734</button>
@@ -39,7 +42,6 @@
     cursor: pointer;
   }
 </style>
-
 
 <script>
   const allStars = document.querySelectorAll('.star');
