@@ -38,7 +38,8 @@ position: relative;
 overflow: hidden;
 }
 .swiper-background{
-position: absolute;
+
+    position: absolute;
 object-fit: cover;
 object-position: center center;
 width: 100%;
@@ -55,6 +56,25 @@ z-index: 1;
 z-index: -1;
 object-fit: cover;
 } */
+.swiper-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+}
+
+
+.img1 {
+object-fit: cover;
+position: absolute;
+bottom: 30px;
+width: 90%;
+height: 120%;
+}
+
+#movieImage {
+scale: 0.9;
+}
 
 #searchInput {
     top: 7px;
