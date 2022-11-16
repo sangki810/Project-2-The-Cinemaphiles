@@ -10,7 +10,8 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.25.5"
+    "sequelize": "^6.25.5",
+    "slick-carousel": "^1.8.1"
   },
   "name": "project-2-the-cinemaphiles",
   "description": "This is the project 2 for the UCF FSF Bootcamp",
