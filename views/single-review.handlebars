@@ -1,18 +1,18 @@
 <div class="row">
-  <div class="col-md-6">
-    <h2>{{ movie.title }}</h2>
+    <div class="col-md-3">
+        <h2>{{original_title}}</h2>
+        <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
+    </div>
 
-    <img src="{{ movie.img }}" alt="movie poster" width="350" height="600">
-  </div>
-
-  <div class="col-md-6">
-    <h2>Reviews</h2>
-
-    <form class="form review-form">
-      <div class="form-group">
-        <input class="form-input" type="text" id="reivew" placeholder="Add a reivew"/>
-      </div>
-      </div>
-    </form>
-  </div>
+    <div class="col-md-9">
+        <div class="row">
+            <label>Review</label>
+            <p>{{review.content}}</p>
+        </div>
+        <div class="row">
+            <form>
+                <input class="input" id="review-form" type="text" placeholder="Add a review">
+            </form>
+        </div>
+    </div>
 </div>
