@@ -1,13 +1,16 @@
 {{!-- hero --}}
+
 <section class="hero has-background">
-  {{!-- tried putting as hero background
-  {{#each movies as |movie|}}
+  {{!-- tried putting as hero background --}}
+  {{!-- {{#each movies as |movie|}}
   <img class="hero-background background is-transparent" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
   {{/each}} --}}
 
+  {{!-- hero swiwper --}}
+
   <div class="hero-body">
      {{!-- Slider main container  --}}
-    <div class="swiper">
+    <div class="swiper swiper1">
        {{!-- Additional required wrapper  --}}
       <div class="swiper-wrapper">
         {{!-- Slides  --}}
@@ -20,18 +23,20 @@
         </div>
         {{/each}}
       </div>
-       {{!-- If we need pagination  --}}
-      <div class="swiper-pagination"></div>
+       {{!-- pagination  --}}
+      <div class="swiper-pagination swiper-pagination1"></div>
 
-       {{!-- If we need navigation buttons  --}}
+       {{!-- navigation buttons  --}}
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
 
-      {{!--  If we need scrollbar  --}}
-      <div class="swiper-scrollbar"></div>
+      {{!-- scrollbar  --}}
+      <div class="swiper-scrollbar swiper-scrollbar1"></div>
     </div>
-  </div>
+  </div> 
 </section>
+
+
 {{!-- css for slider.. needs to go in seperate file --}}
 <style>
 .swiper-slide{
@@ -50,34 +55,38 @@ opacity: 0.5;
 }
 </style>
 
+{{!-- movies swiper --}}
 
-
-
- {{!-- Swiper --}}
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          {{#each movies as |movie|}}
-          <p>{{id}}</p>
-          <p>{{original_title}}</p>
-          <p>{{overview}}</p>
-          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
-          {{/each}}
-        </div>
-
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    {{#each movies as |movie|}}
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w342/{{poster_path}}">
+        <p>{{original_title}}</p>
       </div>
+    {{/each}}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
 
-       {{#if movieSearchResults.length}} 
+ 
+
+
+search-results
+{{#if movieSearchResults.length}} 
 <h3>search results</h3>
-       {{#each movieSearchResults as |movie|}}
-          <p>{{id}}</p>
-          <p>{{original_title}}</p>
-          <p>{{overview}}</p>
-          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
-          {{/each}}
-          {{/if}}
+{{#each movieSearchResults as |movie|}}
+<p>{{id}}</p>
+<p>{{original_title}}</p>
+<p>{{overview}}</p>
+<img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+{{/each}}
+{{/if}}
 
-{{!-- 
+
+{{-- data rendered to route
+
+
 {{#each movies as |movie|}}
 <p>{{id}}</p>
 <p>{{original_title}}</p>
