@@ -49,7 +49,7 @@
           <!-- Conditionally render login or logout links -->
       {{#if logged_in}}
       <button class="button is-normal is-responsive is-info is-outlined" id="profile" href="/profile">Profile</button>
-      <button class="button is-normal is-responsive is-info is-outlined" id="logout" href="/login"> Logout</button>
+      <a class="button is-normal is-responsive is-info is-outlined" id="logout" href="/"> Logout</a>
       {{else}}
       {{!-- <a href="/login">login</a> --}}
       <a class="button is-normal is-responsive is-info is-outlined" id="login" href="/login">Login</a>
