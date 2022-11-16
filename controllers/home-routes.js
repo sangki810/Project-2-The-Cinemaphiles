@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
       searchResults = searchResults.data.results
     }
 
-    // console.log(results.data.results);
+    console.log(results.data.results);
 
     // const movieData = await Movie.findAll({
     //   include: [

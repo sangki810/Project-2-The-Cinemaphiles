@@ -17,9 +17,9 @@
         {{#each movies as |movie|}}
         <div class="swiper-slide has-text-centered has-background">
           {{!-- backgorund img --}}
-          <img class="swiper-background background is-transparent" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+          <img class=" img1 swiper-background background is-transparent" src="https://image.tmdb.org/t/p/w1280/{{backdrop_path}}">
           {{!-- movie img --}}
-          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+          <img class="img2" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
         </div>
         {{/each}}
       </div>
@@ -36,24 +36,22 @@
   </div> 
 </section>
 
+{{!-- render search data if user searched --}}
+{{#if movieSearchResults.length}} 
+<h1 class="title" ><b>Search results:</b></h1>
+{{#each movieSearchResults as |movie|}}
+<div class="hero is-ancestor">
+  <div class="hero-body is-7 is-vertical is-parent">
+    <div class="has-text-centered tile is-child box">
+       <img src="https://image.tmdb.org/t/p/w154/{{poster_path}}">
+          <p class=" title">{{original_title}}</p>
+          <p class="subtitle">{{overview}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-{{!-- css for slider.. needs to go in seperate file --}}
-<style>
-.swiper-slide{
-position: relative
-overflow: hidden
-}
-.swiper-background{
-position: absolute
-object-fit: cover
-object-position: center center
-width: 100%
-height: 100%
-}
-.is-transparent{
-opacity: 0.5;
-}
-</style>
 
 {{!-- movies swiper --}}
 
@@ -69,11 +67,51 @@ opacity: 0.5;
   <div class="swiper-pagination"></div>
 </div>
 
- 
+
+<style>
+.swiper-slide{
+position: relative
+overflow: hidden
+}
+.swiper-background{
+object-fit: cover
+object-position: center center
+width: 100%
+height: 100%
+}
+.is-transparent{
+opacity: 0.5;
+}
+
+.img1{
+  position: absolute
+display: block;
+z-index: 1;
+}
+.img2{
+position: absolute
+display: block;
+z-index: 2;
+right: 100px;
+}
+.movie-card {
+align-items: center;
+}
+</style>
 
 
-{{!-- search-results --}}
-{{#if movieSearchResults.length}} 
+{{!-- movies render data
+{{#each movies as |movie|}}
+<p>{{id}}</p>
+<p>{{original_title}}</p>
+<p>{{overview}}</p>
+<img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+{{/each}} --}}
+
+
+
+{{!-- search-results data --}}
+{{!-- {{#if movieSearchResults.length}} 
 <h3>search results</h3>
 {{#each movieSearchResults as |movie|}}
 <p>{{id}}</p>
@@ -81,16 +119,7 @@ opacity: 0.5;
 <p>{{overview}}</p>
 <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
 {{/each}}
-{{/if}}
-
-
-
-{{!-- {{#each movies as |movie|}}
-<p>{{id}}</p>
-<p>{{original_title}}</p>
-<p>{{overview}}</p>
-<img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
-{{/each}} --}}
+{{/if}} --}}
 
 <script src="/js/home.js"></script>
 
