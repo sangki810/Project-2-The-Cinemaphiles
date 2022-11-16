@@ -1,14 +1,14 @@
-const axios =require("axios")
+// const axios =require("axios")
 
-console.log("hello")
+// console.log("hello")
 
-axios
-  .get("https://api.themoviedb.org/3/movie/popular", {
-    params: { api_key: "b8ee7a106909a7a297e5b0ca3b261018", language: "en-US" },
-  })
-  .then((result) => {
-    console.log(result.data.results);
-  });
+// axios
+//   .get("https://api.themoviedb.org/3/movie/popular", {
+//     params: { api_key: "b8ee7a106909a7a297e5b0ca3b261018", language: "en-US" },
+//   })
+//   .then((result) => {
+//     console.log(result.data.results);
+//   });
 
 
 //   const options = {
