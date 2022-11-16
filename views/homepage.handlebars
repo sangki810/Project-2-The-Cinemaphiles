@@ -40,12 +40,12 @@
 {{#if movieSearchResults.length}} 
 <h1 class="title" ><b>Search results:</b></h1>
 {{#each movieSearchResults as |movie|}}
-<div class="hero is-ancestor">
-  <div class="hero-body is-7 is-vertical is-parent">
+<div class="footer is-ancestor">
+  <div class="is-7 is-vertical is-parent">
     <div class="has-text-centered tile is-child box">
        <img src="https://image.tmdb.org/t/p/w154/{{poster_path}}">
-          <p class=" title">{{original_title}}</p>
-          <p class="subtitle">{{overview}}</p>
+          <p class="is-size-3">{{original_title}}</p>
+          <p class="is-size-4">{{overview}}</p>
           <button id="movieInput">Review Me!</button>
     </div>
   </div>
