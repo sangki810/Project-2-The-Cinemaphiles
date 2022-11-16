@@ -8,7 +8,7 @@
           <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
         </div>
         <div class="column">
-          <h2>Review by {{user.name}}</h2>
+          <h2>Review by {{user.name}} on {{reivew.date_created}}</h2>
           <p>{{review.content}}</p>
           <div class="star-rating">
             <button class="star">&#9734</button>
@@ -23,3 +23,41 @@
     </div>
   </div>
 </section>
+
+<style>
+  .star-rating {
+    user-select: none;
+  }
+
+  .star {
+    font-size: 1.5rem;
+    color: #ff9800;
+    background-color: unset;
+    border: none;
+    padding: 0;
+  }
+
+  .star:hover {
+    cursor: pointer;
+  }
+</style>
+
+{{#each reviews as |review| }}
+<script>
+  const allStars = document.querySelectorAll('.star');
+ 
+  allStars.forEach( (star, i) => {
+    star.onclick = function () {
+      let currentStarLevel = i + 1;
+      
+      allStars.forEach((star, j) => {
+        if ( currentStarLevel >= j+1) {
+          star.innerHTML = '&#9733';
+        } else {
+          star.innerHTML = '&#9734'
+        }
+      })
+    }
+  })
+</script>
+{{/each}}
