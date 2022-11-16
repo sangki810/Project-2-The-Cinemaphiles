@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // render all reviews
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try{
     const reviewData = await Review.findAll({
       // include: [
@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
 });
 
 // render a single review
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try{
     const reviewData = await Review.findByPk(req.params.id, {
       // include: [
@@ -81,7 +81,7 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // DELETE a review
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: { id: req.params.id }
