@@ -2,6 +2,7 @@
 var searchButton = document.querySelector("#searchButton");
 var searchInput = document.querySelector("#searchInput");
 var movieReview = document.querySelector("#movieInput");
+var movieImage = document.querySelector("#movieImage");
 
 
 var submitMovieSearch = function () {
@@ -14,7 +15,13 @@ var submitMovieSearch = function () {
 searchButton.addEventListener("click", submitMovieSearch);
 
 var completeMovieReview = function () {
-  window.location.href = '/reviews';
+  window.location.href = `/api/review`;
     // window.location.reload(true)
 };
 movieReview.addEventListener("click", completeMovieReview);
+
+var completeMovieImageReview = function () {
+  window.location.href = `/api/review`;
+    // window.location.reload(true)
+};
+movieImage.addEventListener("click", completeMovieImageReview);

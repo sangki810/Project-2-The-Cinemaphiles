@@ -19,7 +19,7 @@
           {{!-- backgorund img --}}
           <img class=" img1 swiper-background background is-transparent" src="https://image.tmdb.org/t/p/w1280/{{backdrop_path}}">
           {{!-- movie img --}}
-          <img class="img2" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+          <img id="movieImage" class="img2" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
         </div>
         {{/each}}
       </div>
@@ -60,7 +60,7 @@
   <div class="swiper-wrapper">
     {{#each movies as |movie|}}
       <div class="swiper-slide">
-        <img src="https://image.tmdb.org/t/p/w342/{{poster_path}}">
+        <img id="movieImage" src="https://image.tmdb.org/t/p/w342/{{poster_path}}">
         <p>{{original_title}}</p>
       </div>
     {{/each}}
