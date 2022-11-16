@@ -1,42 +1,52 @@
-{{!-- <div>
-  <div>
-{{!-- movie img --}}
-  </div>
-{{!-- movie title --}}
-  <h2></h2>
-</div>
-
-<div>
-  <div>
-{{!-- movie img --}}
-  </div>
-{{!-- movie title --}}
-  <h2></h2>
-</div>
-
-<div>
-  <div>
-{{!-- movie img --}}
-  </div>
-{{!-- movie title --}}
-  <h2></h2>
-</div> --}}
-
 {{!-- hero --}}
-<section class="hero is-large is-info">
+<section class="hero is-halfheight is-dark">
   <div class="hero-body">
-    <p class="title">
-      Large hero
-    </p>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+            <!-- Slides -->
+        {{#each movies as |movie|}}
+        <div class="swiper-slide has-text-centered">      
+          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+        </div>
+        {{/each}}
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
   </div>
 </section>
 
+<!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          {{#each movies as |movie|}}
+          <p>{{id}}</p>
+          <p>{{original_title}}</p>
+          <p>{{overview}}</p>
+          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+          {{/each}}
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+{{!-- 
 {{#each movies as |movie|}}
 <p>{{id}}</p>
 <p>{{original_title}}</p>
 <p>{{overview}}</p>
-{{/each}}
-
+<img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+{{/each}} --}}
 
 <script src="/js/home.js"></script>
 
