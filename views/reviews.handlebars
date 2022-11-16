@@ -1,8 +1,8 @@
 <section class="hero is-dark is-fullheight">
   <div class="hero-body is-flex">
-    <div class="container box">
+    <div class="container">
       {{#each reviews as |review| }}
-      <div class="columns is-centered">
+      <div class="columns is-centered box">
         <div class="column">
           <h2>{{original_title}}</h2>
           <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
@@ -10,6 +10,13 @@
         <div class="column">
           <h2>Review by {{user.name}}</h2>
           <p>{{review.content}}</p>
+          <div class="star-rating">
+            <button class="star">&#9734</button>
+            <button class="star">&#9734</button>
+            <button class="star">&#9734</button>
+            <button class="star">&#9734</button>
+            <button class="star">&#9734</button>
+          </div>
         </div>
       </div>
       {{/each}}

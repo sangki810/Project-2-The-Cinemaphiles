@@ -1,18 +1,16 @@
-<div class="row">
-    <div class="col-md-3">
-        <h2>{{original_title}}</h2>
-        <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
-    </div>
-
-    <div class="col-md-9">
-        <div class="row">
-            <label>Review</label>
-            <p>{{review.content}}</p>
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body is-flex">
+    <div class="container box  ">
+      <div class="columns is-centered">
+        <div class="column">
+          <h2>{{original_title}}</h2>
+          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
         </div>
-        <div class="row">
-            <form>
-                <input class="input" id="review-form" type="text" placeholder="Add a review">
-            </form>
+        <div class="column">
+          <h2>Review by {{user.name}}</h2>
+          <p>{{review.content}}</p>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
