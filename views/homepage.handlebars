@@ -1,31 +1,59 @@
 {{!-- hero --}}
-<section class="hero is-halfheight is-dark">
+<section class="hero has-background">
+  {{!-- tried putting as hero background
+  {{#each movies as |movie|}}
+  <img class="hero-background background is-transparent" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+  {{/each}} --}}
+
   <div class="hero-body">
-    <!-- Slider main container -->
+     {{!-- Slider main container  --}}
     <div class="swiper">
-      <!-- Additional required wrapper -->
+       {{!-- Additional required wrapper  --}}
       <div class="swiper-wrapper">
-            <!-- Slides -->
+        {{!-- Slides  --}}
         {{#each movies as |movie|}}
-        <div class="swiper-slide has-text-centered">      
+        <div class="swiper-slide has-text-centered has-background">
+          {{!-- backgorund img --}}
+          <img class="swiper-background background is-transparent" src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
+          {{!-- movie img --}}
           <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}">
         </div>
         {{/each}}
       </div>
-      <!-- If we need pagination -->
+       {{!-- If we need pagination  --}}
       <div class="swiper-pagination"></div>
 
-      <!-- If we need navigation buttons -->
+       {{!-- If we need navigation buttons  --}}
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
 
-      <!-- If we need scrollbar -->
+      {{!--  If we need scrollbar  --}}
       <div class="swiper-scrollbar"></div>
     </div>
   </div>
 </section>
+{{!-- css for slider.. needs to go in seperate file --}}
+<style>
+.swiper-slide{
+position: relative
+overflow: hidden
+}
+.swiper-background{
+position: absolute
+object-fit: cover
+object-position: center center
+width: 100%
+height: 100%
+}
+.is-transparent{
+opacity: 0.5;
+}
+</style>
 
-<!-- Swiper -->
+
+
+
+ {{!-- Swiper --}}
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -38,8 +66,7 @@
         </div>
 
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
+
 {{!-- 
 {{#each movies as |movie|}}
 <p>{{id}}</p>
