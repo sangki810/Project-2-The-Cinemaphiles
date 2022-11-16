@@ -27,6 +27,11 @@ Technologies utilizes in this app include: <br>
 
 
 ## Contributions
+[Jesus Gonzalez](https://github.com/jesusgonzalez05)<br>
+[Nikki Khouvongsavanh](https://github.com/nikkikhou)<br>
+[Jose Plasencia](https://github.com/Josejpd3)<br>
+[Sangki Jun](https://github.com/sangki810)<br>
+
 
 
  
