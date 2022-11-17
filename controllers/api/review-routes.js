@@ -18,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
 
 // render all reviews
 router.get('/', withAuth, async (req, res) => {
-  try{
+  try {
     const reviewData = await Review.findAll({
       // include: [
       //   {
@@ -41,7 +41,7 @@ router.get('/', withAuth, async (req, res) => {
 
 // render a single review
 router.get('/:id', withAuth, async (req, res) => {
-  try{
+  try {
     const reviewData = await Review.findByPk(req.params.id, {
       // include: [
       //   {
