@@ -13,20 +13,44 @@
               <p>{{user.name}}</p>
               <p>{{review.date_created}}</p>
               <p>{{review.content}}</p>
+              <button class="button is-normal is-responsive is-info is-outlined" id="delete-review" data-id="{{review.id}}">Delete</button>
+
             </div>
-            {{/each}}
+          {{/each}}
           </article>
           
+{{!-- 
+  {{#if reviews.length}}
+  <div class="col-md-6 project-list">
+    <p class="is-size-4"><b>Reviews:</b></p>
+
+    {{#each reviews as |review|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <p>{{user.name}}</p>
+        <p>{{review.date_created}}</p>
+        <p>{{review.content}}</p>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+{{/if}} --}}
+
+
+
           <div class="field">
             <div class="control">
               <textarea class="textarea is-info" id="review-input" placeholder="Your movie review"></textarea>
-              <button class="button is-normal is-responsive is-info is-outlined" id="post-review" type="submit">Post</button>
-              <button class="button is-normal is-responsive is-info is-outlined" id="update-review">Update</button>
-              <button class="button is-normal is-responsive is-info is-outlined" id="delete-review">Delete</button>
+              <button class="button is-normal is-responsive is-info is-outlined" id="post-review">Post</button>
+              {{!-- <button class="button is-normal is-responsive is-info is-outlined" id="update-review" data-id="{{review.id}}">Update</button> --}}
+              {{!-- <button class="button is-normal is-responsive is-info is-outlined" id="delete-review" data-id="{{review.id}}">Delete</button> --}}
             </div>
         </div>
     </div>
   </div>
 </div>
 
-<script src="../public/js/reviews.js"></script>
+<script src="/js/reviews.js"></script>
