@@ -20,12 +20,12 @@ router.post('/', withAuth, async (req, res) => {
 router.get('/', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name']
-      //   }
-      // ]
+      include: [
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ]
     });
 
     const reviews = reviewData.map((review) => review.get({ plain: true }));
@@ -43,12 +43,12 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/:id', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name']
-      //   }
-      // ]
+      include: [
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ]
     });
 
     const review = reviewData.get({ plain: true });

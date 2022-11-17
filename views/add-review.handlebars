@@ -1,62 +1,31 @@
-<section class="hero is-dark is-fullheight">
-  <div class="hero-body is-flex">
-    <div class="container">
-      <div class="columns is-centered box">
-        <div class="column is-one-third">
-          <h2>{{original_title}}</h2>
-          <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie poster">
+<div class="hero is-dark is-fullheight">
+  <div class="hero-body is-7 is-vertical is-parent">
+    <div class=" tile is-child box">
+      {{#each movies as |movie| }}
+      <h1 class="is-size-2 has-text-centered" ><b>{{original_title}}</b></h1>
+        <img id="movieImage" src="https://image.tmdb.org/t/p/w342/{{poster_path}}">
+      {{/each}}
+          <p class="is-size-4"><b>Review:</b></p>
+          <article class="message is-info">
+          {{#each reviews as |review| }}
+            <div class="message-body">
+              <p>{{user.name}}</p>
+              <p>{{reivew.date_created}}</p>
+              <p>{{review.content}}</p>
+            </div>
+            {{/each}}
+          </article>
+           
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea is-info" id="review-input" placeholder="Your movie review"></textarea>
+              <button class="button is-normal is-responsive is-info is-outlined" id="post-review" type="submit">Post</button>
+              <button class="button is-normal is-responsive is-info is-outlined" id="update-review">Update</button>
+              <button class="button is-normal is-responsive is-info is-outlined" id="delete-review">Delete</button>
+            </div>
         </div>
-        <div class="column is-two-thirds">
-          <h2>Review</h2>
-          <form>
-            <input class="input" type="text" placeholder="Add a review">
-            <button class="button">Submit</button>
-          </form>
-          <div class="star-rating">
-            <button class="star">&#9734</button>
-            <button class="star">&#9734</button>
-            <button class="star">&#9734</button>
-            <button class="star">&#9734</button>
-            <button class="star">&#9734</button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-</section>
+</div>
 
-<style>
-  .star-rating {
-    user-select: none;
-  }
-
-  .star {
-    font-size: 1.5rem;
-    color: #ff9800;
-    background-color: unset;
-    border: none;
-    padding: 0;
-  }
-
-  .star:hover {
-    cursor: pointer;
-  }
-</style>
-
-<script>
-  const allStars = document.querySelectorAll('.star');
- 
-  allStars.forEach( (star, i) => {
-    star.onclick = function () {
-      let currentStarLevel = i + 1;
-      
-      allStars.forEach((star, j) => {
-        if ( currentStarLevel >= j+1) {
-          star.innerHTML = '&#9733';
-        } else {
-          star.innerHTML = '&#9734'
-        }
-      })
-    }
-  })
-</script>
+<script src="../public/js/reviews.js"></script>

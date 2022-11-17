@@ -4,6 +4,7 @@ const Movie = require('./Movie');
 
 User.hasMany(Review, {
   foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Review.belongsTo(User, {
