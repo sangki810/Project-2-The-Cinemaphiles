@@ -18,5 +18,24 @@ var submitReviewHandler = async (event) => {
     }
 };
 
-postBtn
-    .addEventListener('click', submitReviewHandler)
+// postBtn
+//     .addEventListener('click', submitReviewHandler)
+
+
+var submitReview = function () {
+
+};
+postBtn.addEventListener("click", submitReview);
+      
+
+var updateReview = function () {
+
+
+};
+updateBtn.addEventListener("click", updateReview);
+
+
+var deleteReview = function () {
+
+};
+deleteBtn.addEventListener("click", deleteReview);
