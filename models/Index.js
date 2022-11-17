@@ -11,6 +11,11 @@ Review.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
+Movie.hasMany(Review, {
+  foreignKey: 'movie_id',
+  onDelete: 'CASCADE',
+});
+
 module.exports = {
     Review,
     User,

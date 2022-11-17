@@ -1,0 +1,17 @@
+[
+    {
+      "content": "this movie is awesome",
+      "like": "true",
+      "rating": "4"
+    },
+    {
+      "content": "this movie is awful",
+      "like": "false",
+      "rating": "0"
+    },
+    {
+      "content": "this movie is ok",
+      "like": "true",
+      "rating": "2.5"
+    }
+  ]
