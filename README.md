@@ -15,7 +15,8 @@ This immersive app calls all cinema and devoted movie lovers to lookup their fav
 
 ## Installations
 This app is deployeed on Heroku!<br>
-[Cinemafiles](link once its been deployed)
+[Cinemafiles](https://cinemafiles-by-cinemaphiles.herokuapp.com/)
+![](./assets/images/cinemafiles-by-cinemaphiles.PNG)
 
 ## Usage
 Technologies utilized in this app include: <br>
